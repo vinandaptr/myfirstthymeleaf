@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body {
+  font-family: Helvetica;
+  background-color: pink;
+  text-align: center;
+}
+
+p {
+  background-color: lightblue;
+}
+
+</style>
+
+	<head>
+		<meta charset="ISO-8859-1">
+	<title>Welcome!</title>
+	</head>
+	
+	<body>
+		<h1>Hi, Vinan!</h1>
+		<h2>Online Form</h2>
+
+		<form action="/action_page.php">
+		 <p><br><label for="fname">First name:</label><br>
+		  <input type="text" id="fname" placeholder="Enter your first name" name="fname"><br><br>
+		  
+		  <label for="lname">Last name:</label><br>
+		  <input type="text" id="lname" placeholder="Enter your last name" name="lname"><br><br> </p>
+		  
+		  <label for="address">Address:</label><br>
+		  <input type="text" id="adress" placeholder="Enter your address" address="address"><br><br>
+		  
+		  <label for="birthday">Birth date:</label><br>
+		  <input type="date" id="birthdaytime" name="birthdaytime"><br><br>
+		  
+		  <label for="gender">Gender:</label><br>
+		  	<input type="radio" name="radio">
+		  	<label class="container">Male
+			</label><br>
+		    
+		    <input type="radio" name="radio">
+			<label class="container">Female
+		  	
+			</label><br><br>
+		  
+		  <label for="religion">Religion:</label><br>
+		  <select id="religion" name="religion">
+		    <option value="islam">Islam</option>
+		    <option value="christian">Christian</option>
+		    <option value="buddhism">Buddhism</option>
+		    <option value="hinduism">Hinduism</option>
+		    <option value="other">Other</option>
+		  </select><br><br>
+		  
+		  <label for="idcard">ID card number:</label><br>
+		  <input type="text" id="idcard" placeholder="Enter 16 digit number" name="idcard" pattern="\d*" maxlength="16">
+		  <br><br>
+		  
+		  <label for="hobby">Hobby:</label><br>
+		  	<input type="checkbox" name="reading" style="margin-bottom:15px"> Reading 	<br>
+		  	<input type="checkbox" name="swimming" style="margin-bottom:15px"> Swimming <br>
+		    <input type="checkbox" name="traveling" style="margin-bottom:15px"> Traveling <br><br>
+		  
+		  <input type="submit" value="Submit">
+		</form>
+		
+	</body>
+	
+</html>

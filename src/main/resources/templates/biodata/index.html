@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html layout:decorate="~{base}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<div class="row mb-2" layout:fragment="content-header">
+    <div class="col-sm-6">
+        <h1 class="m-0 text-dark">Application Form</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Biodata</a></li>
+            <li class="breadcrumb-item active">Kelola</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row" layout:fragment="content-body">
+
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">List Biodata</h3>
+                <button class="float-right btn-primary" id="btn-tambah-biodata">Tambah</button>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive">
+                <table class="table table-striped table-bordered table-hover nowrap" id="tableBiodata"
+                       style="width:100%"></table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.col -->
+    
+<!--     <p id ="demo"></p> -->
+
+
+    <div class="modal fade" id="modal-biodata">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Application Form</h4>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-header">
+
+                    </div>
+                    <form id="form-biodata" role="form">
+                        <input name="id" type="hidden"/>
+									<div class="form-group">
+										<label for="fullname">Full Name</label> <input required type="text"
+											class="form-control" id="fname" name="fullName"
+											placeholder="Enter your full name">
+									</div>
+									<button type="button" id="btn-show" class="btn btn-success swalDefaultSuccess">
+                  							Show</button><br><br>
+									<div class="form-group">
+										<label for="email">Email</label> <input required type="text"
+											class="form-control" id="email" name="email"
+											placeholder="Enter your email">
+									</div>
+									<div class="form-group">
+										<label for="phone">Phone Number</label> <input required type="text"
+											class="form-control" id="phone" name="phone"
+											placeholder="Enter your phone number">
+									</div>
+									<div class="form-group">
+										<label for="address">Address</label> <input required type="text"
+											class="form-control" id="address" name="address"
+											placeholder="Enter your address">
+									</div>
+									<div class="form-group">
+										<label for="birthday">Birthday</label> <input type="date"
+											class="form-control" id="birthday" name="birthday">
+									</div>
+									<div class="form-group">
+										<label for="idcard">ID Card Number</label> <input
+											required type="text" class="form-control" id="idcard" name="idCard">
+									</div>
+									<div class="form-group">
+										<label>University</label> <input required type="text"
+											class="form-control" id="univ" name="univ"
+											placeholder="Enter your university">
+									</div>
+										
+									<div class="form-group">
+										<label>Major</label> <input required type="text" class="form-control"
+											id="major" name="major" placeholder="Enter your major">
+									</div>
+									<div class="form-group">
+										<label>GPA</label> <input required type="text" class="form-control"
+											id="gpa" name="gpa" placeholder="Enter your GPA">
+									</div>
+									<div class="form-group">
+										<label>Cover Letter</label>
+										<textarea class="form-control" rows="3" id="cover" name="cover"
+											placeholder="Write your cover letter"></textarea>
+									</div>
+									<div class="form-group">
+										<label>Hobby</label>
+										<div class="custom-control custom-checkbox">
+											<input class="custom-control-input" type="checkbox"
+												id="customCheckbox1" name = "hobby" value="Reading"> <label
+												for="customCheckbox1" class="custom-control-label">Reading</label>
+										</div>
+										<div class="custom-control custom-checkbox">
+											<input class="custom-control-input" type="checkbox"
+												id="customCheckbox2" name = "hobby" value="Swimming"> <label
+												for="customCheckbox2" class="custom-control-label">Swimming</label>
+										</div>
+										<div class="custom-control custom-checkbox">
+											<input class="custom-control-input" type="checkbox"
+												id="customCheckbox3" name = "hobby" value="Traveling"> <label
+												for="customCheckbox3" class="custom-control-label">Traveling</label>
+										</div>
+										<div class="custom-control custom-checkbox">
+											<input class="custom-control-input" type="checkbox"
+												id="customCheckbox4" name = "hobby" value="Eating"> <label
+												for="customCheckbox4" class="custom-control-label">Eating</label>
+										</div>
+									</div>
+										<div class="form-group">
+										<label>Gender</label>
+										<div class="custom-control custom-radio">
+											<input class="custom-control-input" type="radio"
+												id="customRadio1" name="gender" value="Male"> <label
+												for="customRadio1" class="custom-control-label">Male</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input class="custom-control-input" type="radio"
+												id="customRadio2" name="gender" value="Female"> <label
+												for="customRadio2" class="custom-control-label">Female</label>
+										</div>
+										<div class="form-group">
+											<label><br>Religion</label> <select
+												class="custom-select" id="religion" name="religion">
+												<option value="Moslem">Moslem</option>
+												<option value="Christian">Christian</option>
+												<option value="Hinduism">Hinduism</option>
+												<option value="Buddhism">Buddhism</option>
+												<option value="Other">Other</option>
+											</select>
+										</div>
+
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+                    <button class="btn btn-primary" id="btn-save-biodata" type="button">Save</button>
+<!--                 	<button type="button" id="submit" class="btn btn-info">Submit</button> -->
+<!-- 					<button type="button" id="btn-reset" class="btn btn-danger">Reset</button> -->
+<!-- 					<button type="button" id="btn-fill" class="btn btn-warning">Fill</button> -->
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+</div>
+
+
+<th:block layout:fragment="add-scripts">
+    <script th:src="@{/js/biodata.js}"></script>
+
+    <script>
+    
+	    $("#btn-show").click(function(){
+		    var fname = $("#fname").val();
+		    $(document).Toasts('create', {
+		    	  class: 'bg-pink',
+		    	  title: 'Hello! &#128512;',
+		    	  body: fname
+		    })
+		 });    
+    
+        tableBiodata.create();
+
+        $('#btn-cari-pasien').click(function () {
+            var tanggalLahir = new Date($('#tanggalLahir').val()) * 1;
+            tableKelolaPasien.create();
+        });
+
+        $('#btn-tambah-biodata').click(function () {
+            formBiodata.resetForm();
+            $('#modal-biodata').modal('show')
+        });
+
+        $('#btn-save-biodata').click(function () {
+            formBiodata.saveForm()
+        })
+        
+
+    </script>
+</th:block>
+
+</html>
